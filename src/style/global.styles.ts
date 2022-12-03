@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { createGlobalStyle } from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   button {
+    color: inherit;
     border: none;
     background-color: transparent;
     cursor: pointer;
