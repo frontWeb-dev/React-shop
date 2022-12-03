@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Slider from "react-slick";
+import styled from 'styled-components';
+import Slider from 'react-slick';
 
 const BannerSection = styled.div`
   position: relative;
@@ -41,7 +41,7 @@ const BannerText = styled.div`
   width: 100%;
   height: 700px;
   padding: 0 40px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 
   h1 {
     font-size: 36px;
@@ -62,12 +62,27 @@ const BannerText = styled.div`
   }
 `;
 
-const ArrowWrapper = styled.div`
+const ArrowWrapper = styled.div<{ arrow: string }>`
+  position: absolute;
+  top: 0;
+  left: ${(props) => (props.arrow === 'prev' ? 0 : 'auto')};
+  right: ${(props) => (props.arrow === 'next' ? 0 : 'auto')};
   width: 50px;
   height: 700px;
+  cursor: pointer;
+  z-index: 1;
 
+  svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 `;
 
