@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Inner } from '../../style/inner';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -9,12 +10,10 @@ const HeaderWrapper = styled.header`
   background-color: #191a24;
   z-index: 1;
 `;
-const HeaderInner = styled.div`
+const HeaderInner = styled(Inner)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1360px;
-  margin: 0 auto;
 `;
 const Gnb = styled.div`
   display: flex;

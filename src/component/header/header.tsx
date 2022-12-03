@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  HiOutlineSun,
-  HiOutlineMoon,
-  HiOutlineShoppingBag,
-} from "react-icons/hi";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { HiOutlineSun, HiOutlineMoon, HiOutlineShoppingBag } from 'react-icons/hi';
 import {
   HeaderWrapper,
   HeaderInner,
@@ -16,7 +12,7 @@ import {
   SearchForm,
   SearchInput,
   CartButton,
-} from "./header.styles";
+} from './header.styles';
 
 const Header = () => {
   const [isDark, setIsDark] = useState(true);
@@ -29,17 +25,19 @@ const Header = () => {
     <HeaderWrapper>
       <HeaderInner>
         <Gnb>
-          <Logo>React Shop</Logo>
+          <Logo>
+            <Link to='/'>React Shop</Link>
+          </Logo>
 
           <MenuList>
             <li>
-              <Link to="">패션</Link>
+              <Link to='/fashion'>패션</Link>
             </li>
             <li>
-              <Link to="">악세서리</Link>
+              <Link to='/jewerly'>악세서리</Link>
             </li>
             <li>
-              <Link to="">디지털</Link>
+              <Link to='/digital'>디지털</Link>
             </li>
           </MenuList>
         </Gnb>
@@ -48,7 +46,7 @@ const Header = () => {
             {isDark ? <HiOutlineSun size={24} /> : <HiOutlineMoon size={24} />}
           </ModeButton>
           <SearchForm>
-            <SearchInput type="text" placeholder="검색" />
+            <SearchInput type='text' placeholder='검색' />
           </SearchForm>
           <CartButton>
             <HiOutlineShoppingBag size={24} />
