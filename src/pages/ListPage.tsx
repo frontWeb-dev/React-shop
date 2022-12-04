@@ -9,7 +9,11 @@ const ListPage = () => {
   const { category } = useParams();
   const [data, setData] = useState();
 
-  return <></>;
+  return (
+    <>
+      <ItemList />
+    </>
+  );
 };
 
 export default ListPage;

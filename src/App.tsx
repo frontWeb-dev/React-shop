@@ -8,10 +8,10 @@ import GlobalStyle from './style/global.styles';
 
 // page
 import Header from './component/header/header';
-import Layout from './pages/LayoutPage';
 import Main from './pages/MainPage';
-import Footer from './component/footer/Footer';
 import ListPage from './pages/ListPage';
+import DetailPage from './pages/DetailPage';
+import Footer from './component/footer/Footer';
 
 const App = () => {
   return (
@@ -22,8 +22,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/:category' element={<ListPage />} />
-          <Route path='/product/:id'></Route>
-          <Route element={<Layout />}></Route>
+          <Route path='/product/:id' element={<DetailPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
