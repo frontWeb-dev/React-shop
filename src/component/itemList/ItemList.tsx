@@ -12,7 +12,7 @@ const ItemList = (props: dataProps) => {
       <ListInner>
         <Title>{props.category}</Title>
         <ItemsContainer>
-          {params.id === undefined
+          {params.category === undefined
             ? props.data.slice(0, 4).map((a) => <Item data={a} />)
             : props.data.map((a) => <Item data={a} />)}
         </ItemsContainer>

@@ -3,7 +3,7 @@ import { Inner } from '../../style/inner';
 
 const ListWrapper = styled.div`
   width: 100%;
-  padding: 48px 16px 32px 16px;
+  padding: 48px 16px;
   background-color: #2a303c;
 `;
 

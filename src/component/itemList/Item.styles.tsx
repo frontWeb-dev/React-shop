@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-const ItemWrapper = styled.div``;
+const ItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+`;
 
 const ImageContainer = styled.div`
   height: 20rem;
@@ -8,8 +13,6 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
   overflow: hidden;
 `;
 
@@ -19,12 +22,14 @@ const ItemImage = styled.img`
 `;
 
 const InfoContainer = styled.div`
-  padding: 1rem;
-  min-height: 6rem;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
   color: #a6aaba;
   font-size: 0.9rem;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
   background-color: #374151;
 `;
+
 export { ItemWrapper, ImageContainer, ItemImage, InfoContainer };
