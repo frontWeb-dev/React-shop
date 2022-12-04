@@ -6,7 +6,7 @@ export interface slickProps {
   loop?: boolean;
 }
 
-export interface itemsProps {
+export interface bannerProps {
   image: string;
   name: string;
   title: string;
