@@ -55,11 +55,15 @@ const BannerText = styled.div`
     color: #a6aaba;
     background-color: #191d24;
     border-radius: 5px;
-
-    svg {
-      margin-left: 4px;
-    }
   }
+`;
+
+const ArrowImage = styled.div`
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  background: url('/assets/asset 20.svg') no-repeat;
+  filter: invert(90%) sepia(63%) saturate(5038%) hue-rotate(180deg) brightness(79%) contrast(81%);
 `;
 
 const ArrowWrapper = styled.div<{ arrow: string }>`
@@ -86,4 +90,4 @@ const ArrowWrapper = styled.div<{ arrow: string }>`
   }
 `;
 
-export { Sllck, BannerSection, SliderWrapper, BannerText, ArrowWrapper };
+export { Sllck, BannerSection, SliderWrapper, BannerText, ArrowImage, ArrowWrapper };

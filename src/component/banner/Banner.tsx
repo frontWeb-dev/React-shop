@@ -1,7 +1,14 @@
 import React from 'react';
 import { BsArrowRightShort } from 'react-icons/bs';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
-import { BannerSection, Sllck, SliderWrapper, BannerText, ArrowWrapper } from './Banner.styles';
+import {
+  BannerSection,
+  Sllck,
+  SliderWrapper,
+  BannerText,
+  ArrowImage,
+  ArrowWrapper,
+} from './Banner.styles';
 import { items } from '../../mock/menu';
 import { useNavigate } from 'react-router-dom';
 import { Inner } from '../../style/inner';
@@ -53,7 +60,7 @@ const Banner = () => {
                 <p>{item.text}</p>
                 <button onClick={handleClick} data-type={item.type}>
                   바로 가기
-                  <BsArrowRightShort size={20} />
+                  <ArrowImage />
                 </button>
               </Inner>
             </BannerText>
