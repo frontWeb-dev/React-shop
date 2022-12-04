@@ -46,11 +46,17 @@ const Snb = styled.div`
   align-items: center;
 `;
 
-const ModeButton = styled.button`
-  width: 48px;
-  height: 48px;
+const ModeButton = styled.button<{ isDark: boolean }>`
+  width: 28px;
+  height: 28px;
+  margin-right: 16px;
   color: #fff;
+  background: ${(props) =>
+      props.isDark ? `url('/assets/asset 16.svg')` : `url('/assets/asset 17.svg')`}
+    no-repeat center / cover;
+  filter: invert(100%) sepia(0%) saturate(7488%) hue-rotate(355deg) brightness(105%) contrast(105%);
 `;
+
 const SearchForm = styled.form``;
 const SearchInput = styled.input`
   width: 185px;
@@ -60,8 +66,11 @@ const SearchInput = styled.input`
   border-radius: 5px;
   background-color: #4b5563;
 `;
-const CartButton = styled(ModeButton)`
+const CartButton = styled.button`
+  width: 48px;
+  height: 48px;
   margin-left: 4px;
+  color: #fff;
   &:hover {
     border-radius: 5px;
     background-color: rgba(166, 173, 186, 0.2);

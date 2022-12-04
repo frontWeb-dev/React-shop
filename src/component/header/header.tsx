@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HiOutlineSun, HiOutlineMoon, HiOutlineShoppingBag } from 'react-icons/hi';
+import { HiOutlineShoppingBag } from 'react-icons/hi';
+import { Hidden } from './../../style/hidden';
 import {
   HeaderWrapper,
   HeaderInner,
@@ -42,8 +43,8 @@ const Header = () => {
           </MenuList>
         </Gnb>
         <Snb>
-          <ModeButton onClick={handleClick}>
-            {isDark ? <HiOutlineSun size={24} /> : <HiOutlineMoon size={24} />}
+          <ModeButton onClick={handleClick} isDark={isDark}>
+            <Hidden>모드 변경 버튼</Hidden>
           </ModeButton>
           <SearchForm>
             <SearchInput type='text' placeholder='검색' />
