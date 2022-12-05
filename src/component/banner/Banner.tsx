@@ -11,7 +11,7 @@ import {
 } from './Banner.styles';
 import { items } from '../../mock/menu';
 import { useNavigate } from 'react-router-dom';
-import { Inner } from '../../style/inner';
+import { Inner, MoreViewButton } from '../../style';
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -58,10 +58,10 @@ const Banner = () => {
               <Inner>
                 <h1>{item.title}</h1>
                 <p>{item.text}</p>
-                <button onClick={handleClick} data-type={item.type}>
+                <MoreViewButton onClick={handleClick} data-type={item.type}>
                   바로 가기
                   <ArrowImage />
-                </button>
+                </MoreViewButton>
               </Inner>
             </BannerText>
           </SliderWrapper>
