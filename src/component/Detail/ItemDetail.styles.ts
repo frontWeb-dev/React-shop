@@ -21,7 +21,6 @@ const DetailContainer = styled.div`
 `;
 
 const DetailImage = styled.div`
-  width: 100%;
   min-width: 20em;
   padding: 16px;
   margin-bottom: 32px;
@@ -55,10 +54,17 @@ const ItemName = styled.div`
   }
 `;
 
-const ItemRate = styled.p`
+const ItemRate = styled.div`
   display: flex;
   align-items: center;
   margin-top: 20px;
+`;
+
+const RateImage = styled.div<{ rating: number }>`
+  width: 120px;
+  height: 25px;
+  margin-right: 6px;
+  background: ${(props) => `url('/assets/asset 30.svg') no-repeat 0 ${props.rating}px / 100%`};
 `;
 
 const ItemPrice = styled.p`
@@ -74,19 +80,6 @@ const ButtonContainer = styled.div`
   margin-bottom: 48px;
 `;
 
-const CartButton = styled.button<{ bgColor?: string }>`
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  padding: 0 1rem;
-  font-size: 0.9rem;
-  font-weight: 900;
-  color: ${(props) => (props.bgColor ? '#fff' : '#a6aaba')};
-  background-color: ${(props) => props.bgColor};
-  border: ${(props) => (props.bgColor ? 'none' : '1px solid #a6aaba')};
-  border-radius: 10px;
-`;
-
 export {
   DetailWrapper,
   DetailNav,
@@ -95,7 +88,7 @@ export {
   ItemInfo,
   ItemName,
   ItemRate,
+  RateImage,
   ItemPrice,
   ButtonContainer,
-  CartButton,
 };
