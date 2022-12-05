@@ -17,8 +17,8 @@ const Item = ({ data }: itemProps) => {
         <ItemImage src={data.image} />
       </ImageContainer>
       <InfoContainer>
-        <div>{data.title}</div>
-        <div>${data.price}</div>
+        <p>{data.title}</p>
+        <p>$ {Math.ceil(data.price)}</p>
       </InfoContainer>
     </ItemWrapper>
   );

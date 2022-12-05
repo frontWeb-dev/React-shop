@@ -25,11 +25,15 @@ const InfoContainer = styled.div`
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 20px;
   padding: 1.5rem;
   color: #a6aaba;
-  font-size: 0.9rem;
+  font-weight: 600;
   background-color: #374151;
+
+  p:last-child {
+    font-weight: 400;
+  }
 `;
 
 export { ItemWrapper, ImageContainer, ItemImage, InfoContainer };
