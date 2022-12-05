@@ -35,7 +35,7 @@ const Header = () => {
               <Link to='/fashion'>패션</Link>
             </li>
             <li>
-              <Link to='/jewerly'>악세서리</Link>
+              <Link to='/jewelry'>악세서리</Link>
             </li>
             <li>
               <Link to='/digital'>디지털</Link>

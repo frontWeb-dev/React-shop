@@ -9,7 +9,7 @@ import {
   ArrowImage,
   ArrowWrapper,
 } from './Banner.styles';
-import { items } from '../../mock/menu';
+import { items } from '../../mock/bannerData';
 import { useNavigate } from 'react-router-dom';
 import { Inner, MoreViewButton } from '../../style';
 
