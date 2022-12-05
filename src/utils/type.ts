@@ -39,8 +39,7 @@ export interface itemsProps {
 }
 
 export interface dataProps {
-  data: itemsProps[];
-  category?: string;
+  category: string;
 }
 
 export interface itemProps {

@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
-import { getProducts } from '../api/apis';
+
 import ItemList from './../component/itemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { menu } from './../mock/menu';
+import Layout from './../component/common/Layout';
 
 const ListPage = () => {
-  const products = useRecoilValue(getProducts('products'));
   const { category } = useParams();
-  const [data, setData] = useState();
+  const map = menu.filter((a) => a.url === category)[0].category;
 
   return (
     <>
-      <ItemList />
+      <Layout>
+        <ItemList category={map} />
+      </Layout>
     </>
   );
 };
