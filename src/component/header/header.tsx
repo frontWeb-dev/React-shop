@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { Hidden } from './../../style/hidden';
 import {
@@ -13,13 +13,22 @@ import {
   SearchForm,
   SearchInput,
   CartButton,
+  Bedge,
 } from './header.styles';
+import { useRecoilState } from 'recoil';
+import { CartItemState } from '../../store/atoms';
 
 const Header = () => {
+  const [items, setItems] = useRecoilState(CartItemState);
+  const navigate = useNavigate();
   const [isDark, setIsDark] = useState(true);
 
   const handleClick = () => {
     setIsDark(!isDark);
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
   };
 
   return (
@@ -49,7 +58,8 @@ const Header = () => {
           <SearchForm>
             <SearchInput type='text' placeholder='검색' />
           </SearchForm>
-          <CartButton>
+          <CartButton onClick={handleCartClick}>
+            {items.length > 0 && <Bedge>{items.length}</Bedge>}
             <HiOutlineShoppingBag size={24} />
           </CartButton>
         </Snb>

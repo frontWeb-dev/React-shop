@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Inner } from '../../style/inner';
+import { Inner } from '../../style';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -67,6 +67,7 @@ const SearchInput = styled.input`
   background-color: #4b5563;
 `;
 const CartButton = styled.button`
+  position: relative;
   width: 48px;
   height: 48px;
   margin-left: 4px;
@@ -75,6 +76,19 @@ const CartButton = styled.button`
     border-radius: 5px;
     background-color: rgba(166, 173, 186, 0.2);
   }
+`;
+
+const Bedge = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  background-color: red;
 `;
 
 export {
@@ -88,4 +102,5 @@ export {
   SearchForm,
   SearchInput,
   CartButton,
+  Bedge,
 };
