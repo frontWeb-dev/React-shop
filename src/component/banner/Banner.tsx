@@ -1,5 +1,4 @@
 import React from 'react';
-import { BsArrowRightShort } from 'react-icons/bs';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import {
   BannerSection,

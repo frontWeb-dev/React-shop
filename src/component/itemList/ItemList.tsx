@@ -4,7 +4,7 @@ import { ListWrapper, ListInner, Title, ItemsContainer } from './ItemList.styles
 import { dataProps, itemsProps } from '../../utils/type';
 import Item from './Item';
 import { useRecoilValue } from 'recoil';
-import { getProducts } from '../../api/apis';
+import { getProducts } from '../../store/apis';
 import { menu } from '../../mock/menu';
 
 const ItemList = (props: dataProps) => {

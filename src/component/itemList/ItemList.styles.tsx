@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Inner } from '../../style/inner';
+import { Inner } from '../../style';
 
 const ListWrapper = styled.div`
   width: 100%;

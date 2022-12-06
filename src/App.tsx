@@ -12,6 +12,7 @@ import Main from './pages/MainPage';
 import ListPage from './pages/ListPage';
 import DetailPage from './pages/DetailPage';
 import Footer from './component/footer/Footer';
+import CartPage from './pages/CartPage';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/:category' element={<ListPage />} />
+          <Route path='/cart' element={<CartPage />} />
           <Route path='/product/:id' element={<DetailPage />} />
         </Routes>
         <Footer />
