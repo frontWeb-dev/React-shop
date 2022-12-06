@@ -38,6 +38,11 @@ export interface itemsProps {
   };
 }
 
+export interface cartItemProps {
+  id: number;
+  count: number;
+}
+
 export interface dataProps {
   category: string;
 }
