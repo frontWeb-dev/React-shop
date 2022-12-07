@@ -44,10 +44,15 @@ export interface cartItemProps {
 }
 
 export interface dataProps {
-  category: string;
+  data: itemsProps[];
 }
 
 export interface itemProps {
   data: itemsProps;
   category?: string;
+}
+
+export interface modalProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }

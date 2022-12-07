@@ -16,7 +16,7 @@ const MoreViewButton = styled(ButtonStyle)`
   background-color: #191d24;
 `;
 
-const AddCartButton = styled(ButtonStyle)`
+const BgButton = styled(ButtonStyle)`
   height: 3rem;
   padding: 0 1rem;
   font-size: 0.9rem;
@@ -24,10 +24,12 @@ const AddCartButton = styled(ButtonStyle)`
   background-color: #6419e6;
 `;
 
-const GoCartButton = styled(AddCartButton)`
+const BorderButton = styled(BgButton)`
   color: #a6aaba;
   background-color: transparent;
   border: 1px solid #a6aaba;
 `;
 
-export { MoreViewButton, AddCartButton, GoCartButton };
+const CartButton = styled(ButtonStyle)``;
+
+export { MoreViewButton, BgButton, BorderButton, CartButton };
