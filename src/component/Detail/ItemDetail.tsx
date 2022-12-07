@@ -13,18 +13,19 @@ import {
   ItemPrice,
   ButtonContainer,
 } from './ItemDetail.styles';
-import { AddCartButton, GoCartButton } from '../../style';
+import { BgButton, BorderButton } from '../../style';
 import Chip from '../common/Chip';
 import { rate } from '../../mock/rate';
 import { CartItemState } from '../../store/atoms';
 import { getProducts } from '../../store/apis';
+import { itemsProps } from '../../utils/type';
 
 const ItemDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const products = useRecoilValue(getProducts('products'));
   const [items, setItems] = useRecoilState(CartItemState);
-  const state = id && products.filter((a) => a.id === +id)[0];
+  const state = id && products.filter((a: itemsProps) => a.id === +id)[0];
 
   const star =
     state.rating.rate % 10 !== 0 ? Math.floor(state.rating.rate) + 'half' : state.rating.rate;
@@ -32,6 +33,18 @@ const ItemDetail = () => {
   const handleAddClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setItems((cur: any) => [...cur, state]);
+    getLocalStorage();
+  };
+
+  const getLocalStorage = () => {
+    const getItem = JSON.parse(localStorage.getItem('Cart-data'));
+
+    if (getItem === null) {
+      localStorage.setItem('Cart-data', JSON.stringify([state]));
+    } else {
+      getItem.push(state);
+      localStorage.setItem('Cart-data', JSON.stringify(getItem));
+    }
   };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -64,8 +77,8 @@ const ItemDetail = () => {
           </ItemRate>
           <ItemPrice>$ {Math.ceil(state.price)}</ItemPrice>
           <ButtonContainer>
-            <AddCartButton onClick={handleAddClick}>장바구니에 담기</AddCartButton>
-            <GoCartButton onClick={handleClick}>장바구니로 이동</GoCartButton>
+            <BgButton onClick={handleAddClick}>장바구니에 담기</BgButton>
+            <BorderButton onClick={handleClick}>장바구니로 이동</BorderButton>
           </ButtonContainer>
         </ItemInfo>
       </DetailContainer>

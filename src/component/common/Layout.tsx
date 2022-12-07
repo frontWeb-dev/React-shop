@@ -6,7 +6,7 @@ const Layout = (props: any) => {
     width: 100%;
     min-height: calc(100vh - 288px - 64px);
     margin-top: 64px;
-    padding: 8px;
+    padding: 20px;
     background-color: #2a303c;
   `;
 
