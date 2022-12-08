@@ -7,7 +7,7 @@ import { useRecoilValue } from 'recoil';
 import { getProducts } from '../../store/apis';
 import { menu } from '../../mock/menu';
 
-const ItemList = (props: dataProps) => {
+const ItemList = (props: { category: string }) => {
   const params = useParams();
   const products = useRecoilValue(getProducts('products'));
 
