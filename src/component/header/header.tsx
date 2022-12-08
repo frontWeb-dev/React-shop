@@ -23,7 +23,6 @@ const Header = () => {
   const localData = JSON.parse(localStorage.getItem('Cart-data'))?.length || 0;
   const [items, setItems] = useRecoilState(CartItemState);
   const [isDark, setIsDark] = useState(true);
-  const [bedge, setBedge] = useState(0);
 
   const handleClick = () => {
     setIsDark(!isDark);
