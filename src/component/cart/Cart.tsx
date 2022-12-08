@@ -14,7 +14,7 @@ const Cart = () => {
   const localData = JSON.parse(localStorage.getItem('Cart-data'));
   const [items, setItems] = useRecoilState(CartItemState);
 
-  const totalPrice = localData
+  const totalPrice = items
     ?.map((a: itemsProps) => a.price)
     .reduce((prev: number, current: number) => Math.ceil(prev + current), 0);
 
@@ -32,7 +32,7 @@ const Cart = () => {
     <>
       <Category>홈 &gt; 장바구니</Category>
 
-      {!localData ? (
+      {!localData || (localData.length === 0 && items.length === 0) ? (
         <>
           <EmptyText>장바구니에 물품이 없습니다.</EmptyText>
           <BgButton onClick={handleHomeClick}>담으러가기</BgButton>
