@@ -2,14 +2,18 @@ import React, { useEffect } from 'react';
 import { Wrapper, ModalContainer, ButtonContainer } from './Modal.styles';
 import { modalProps } from '../../utils/type';
 import { BgButton, BorderButton } from '../../style';
+import { useRecoilState } from 'recoil';
+import { CartItemState } from '../../store/atoms';
 
 const Modal = (props: modalProps) => {
   const { isOpen, setIsOpen } = props;
+  const [items, setItems] = useRecoilState(CartItemState);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const type = e.currentTarget.getAttribute('data-type');
     if (type === 'yes') {
       window.localStorage.removeItem('Cart-data');
+      setItems([]);
     }
     setIsOpen(!isOpen);
   };
