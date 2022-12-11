@@ -19,7 +19,7 @@ const Modal = (props: modalProps) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper modal={true}>
       <ModalContainer>
         <h3>정말로 구매하시겠습니까?</h3>
         <p>장바구니의 모든 상품들이 삭제됩니다.</p>

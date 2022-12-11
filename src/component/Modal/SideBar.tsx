@@ -20,7 +20,7 @@ const SideBar = ({ setSideBar, sideBar }: any) => {
   };
 
   return (
-    <Wrapper onClick={handleClick} sideBar={sideBar}>
+    <Wrapper onClick={handleClick} modal={sideBar}>
       <SideBarContainer sideBar={sideBar} data-type='sidebar'>
         <li
           onClick={(e) => {

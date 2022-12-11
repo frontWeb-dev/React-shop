@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div<{ sideBar: boolean }>`
-  width: ${(props) => (props.sideBar ? '100vw' : 0)};
+const Wrapper = styled.div<{ modal: boolean }>`
+  width: ${(props) => (props.modal ? '100vw' : 0)};
   height: 100vh;
   position: fixed;
   top: 0;
@@ -45,7 +45,7 @@ const SideBarContainer = styled.div<{ sideBar: boolean }>`
   cursor: Default;
 
   @media (max-width: 480px) {
-    width: 15rem;
+    width: 15r;
   }
 
   li {
