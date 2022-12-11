@@ -8,22 +8,43 @@ const HeaderWrapper = styled.header`
   height: 64px;
   font-weight: 600;
   color: ${(props) => props.theme.subTextColor};
-  background-color: ${(props) => props.theme.mainBgColor};
-  z-index: 9999;
+  background-color: ${(props) => props.theme.headerBgColor};
   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  z-index: 9999;
 `;
 const HeaderInner = styled(Inner)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 8px;
 `;
 const Gnb = styled.div`
   display: flex;
   align-items: center;
-  height: 64px;
+  height: 100%;
   margin-right: 16px;
 `;
+
+const SideBarButton = styled.button`
+  display: none;
+  width: 26px;
+  height: 48px;
+  padding: 0;
+  margin-right: 13px;
+  color: ${(props) => props.theme.mainTextColor};
+  background-color: transparent;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: ${(props) => props.theme.hoverBgColor};
+  }
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+`;
+
 const Logo = styled.h1`
   font-size: 18px;
   font-weight: 600;
@@ -32,6 +53,10 @@ const MenuList = styled.ul`
   display: flex;
   align-items: center;
   height: 100%;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 
   li:hover {
     border-radius: 5px;
@@ -60,7 +85,17 @@ const ModeButton = styled.button<{ isDark: string }>`
   filter: ${(props) => props.theme.svgFilter};
 `;
 
-const SearchForm = styled.form``;
+const SearchForm = styled.form<{ search: boolean }>`
+  @media (max-width: 480px) {
+    position: absolute;
+    top: ${(props) => (props.search ? '64px' : '-64px')};
+    left: 0;
+    width: 100%;
+    transition: all 0.3s;
+    opacity: ${(props) => (props.search ? '1' : '0')};
+  }
+`;
+
 const SearchInput = styled.input`
   width: 185px;
   height: 48px;
@@ -68,7 +103,34 @@ const SearchInput = styled.input`
   font-size: 14px;
   border-radius: 5px;
   background-color: ${(props) => props.theme.searchColor};
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  z-index: 9999;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    border-radius: 0;
+  }
 `;
+
+const SearchResult = styled.ul<{ search: boolean }>`
+  background-color: ${(props) => props.theme.searchColor};
+
+  li {
+    padding: 0.75rem;
+    font-weight: 400;
+    border-radius: 5px;
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBgColor};
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    border-radius: 0;
+  }
+`;
+
 const CartButton = styled.button`
   position: relative;
   width: 48px;
@@ -99,11 +161,13 @@ export {
   HeaderWrapper,
   HeaderInner,
   Gnb,
+  SideBarButton,
   Logo,
   MenuList,
   Snb,
   ModeButton,
   SearchForm,
+  SearchResult,
   SearchInput,
   CartButton,
   Bedge,

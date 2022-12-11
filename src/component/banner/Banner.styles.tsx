@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 const BannerSection = styled.div`
   position: relative;
   width: 100%;
-  height: 700px;
   margin-top: 64px;
 `;
 const Sllck = styled(Slider)`
@@ -31,7 +30,11 @@ const SliderWrapper = styled.header<{ bgImage: string }>`
   width: 100%;
   height: 700px;
   color: #fff;
-  background: ${(props) => `url('${props.bgImage}')`};
+  background: ${(props) => `url('${props.bgImage}') no-repeat bottom / cover`};
+
+  @media (max-width: 1023px) {
+    height: 220px;
+  }
 `;
 
 const BannerText = styled.div`
@@ -45,18 +48,33 @@ const BannerText = styled.div`
   padding: 0 40px;
   background-color: rgba(0, 0, 0, 0.4);
 
+  @media (max-width: 1023px) {
+    height: 220px;
+  }
+
   h1 {
     font-size: 36px;
+    margin-bottom: 8px;
+
+    @media (max-width: 1023px) {
+      font-size: 24px;
+    }
   }
+
   button {
     display: flex;
     align-items: center;
-    margin-top: 8px;
     padding: 12px 16px;
+    margin-top: 12px;
     font-weight: 600;
     color: ${(props) => props.theme.buttonTextColor};
     background-color: ${(props) => props.theme.buttonColor};
     border-radius: 5px;
+
+    @media (max-width: 1023px) {
+      padding: 5px 12px;
+      font-size: 14px;
+    }
   }
 `;
 
@@ -73,10 +91,15 @@ const ArrowWrapper = styled.div<{ arrow: string }>`
   top: 0;
   left: ${(props) => (props.arrow === 'prev' ? 0 : 'auto')};
   right: ${(props) => (props.arrow === 'next' ? 0 : 'auto')};
-  width: 50px;
+  width: 30px;
   height: 700px;
+  padding: 5px;
   cursor: pointer;
   z-index: 1;
+
+  @media (max-width: 1023px) {
+    height: 220px;
+  }
 
   svg {
     width: 20px;
@@ -85,10 +108,15 @@ const ArrowWrapper = styled.div<{ arrow: string }>`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: #1f2937;
   }
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.3);
+
+    svg {
+      color: #fff;
+    }
   }
 `;
 

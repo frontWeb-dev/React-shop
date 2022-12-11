@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CartButton } from '../../style';
+import { BgButton } from '../../style';
 
 const Category = styled.p`
   margin-bottom: 50px;
@@ -97,11 +97,26 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 0.5rem;
 `;
 
-const CountButton = styled(CartButton)`
+const ButtonGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  align-items: center;
+  overflow: hidden;
+
+  & > div {
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    color: ${(props) => props.theme.mainTextColor};
+  }
+`;
+
+const CountButton = styled(BgButton)`
   height: 3rem;
+  border-radius: 0;
 `;
 
 const TotalContainer = styled.div`
@@ -128,6 +143,7 @@ export {
   ProductInfo,
   ProductPrice,
   ButtonContainer,
+  ButtonGroup,
   CountButton,
   TotalContainer,
 };
