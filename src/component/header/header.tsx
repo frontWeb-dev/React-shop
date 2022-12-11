@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
@@ -17,16 +17,13 @@ import {
   Bedge,
 } from './header.styles';
 import { CartItemState } from '../../store/atoms';
+import { ThemeContext } from '../../context/ThemeProvider';
 
-const Header = () => {
+const Header = ({}) => {
+  const { theme, onChangeTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const localData = JSON.parse(localStorage.getItem('Cart-data'))?.length || 0;
   const [items, setItems] = useRecoilState(CartItemState);
-  const [isDark, setIsDark] = useState(true);
-
-  const handleClick = () => {
-    setIsDark(!isDark);
-  };
 
   const handleCartClick = () => {
     navigate('/cart');
@@ -53,7 +50,7 @@ const Header = () => {
           </MenuList>
         </Gnb>
         <Snb>
-          <ModeButton onClick={handleClick} isDark={isDark}>
+          <ModeButton onClick={onChangeTheme} isDark={theme}>
             <Hidden>모드 변경 버튼</Hidden>
           </ModeButton>
           <SearchForm>
