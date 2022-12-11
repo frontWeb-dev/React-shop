@@ -12,8 +12,8 @@ const ButtonStyle = styled.button`
 const MoreViewButton = styled(ButtonStyle)`
   margin-top: 8px;
   padding: 12px 16px;
-  color: #a6aaba;
-  background-color: #191d24;
+  color: ${(props) => props.theme.mainTextColor};
+  background-color: ${(props) => props.theme.buttonColor}; ;
 `;
 
 const BgButton = styled(ButtonStyle)`
@@ -25,9 +25,9 @@ const BgButton = styled(ButtonStyle)`
 `;
 
 const BorderButton = styled(BgButton)`
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
   background-color: transparent;
-  border: 1px solid #a6aaba;
+  border: 1px solid ${(props) => props.theme.mainTextColor};
 `;
 
 const CartButton = styled(ButtonStyle)``;
