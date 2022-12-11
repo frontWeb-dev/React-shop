@@ -7,7 +7,7 @@ const Layout = (props: any) => {
     min-height: calc(100vh - 288px - 64px);
     margin-top: 64px;
     padding: 20px;
-    background-color: #2a303c;
+    background-color: ${(props) => props.theme.mainBgColor};
   `;
 
   const LayoutInner = styled(Inner)`

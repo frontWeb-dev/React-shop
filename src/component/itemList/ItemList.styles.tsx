@@ -4,7 +4,7 @@ import { Inner } from '../../style';
 const ListWrapper = styled.div`
   width: 100%;
   padding: 48px 16px;
-  background-color: #2a303c;
+  background-color: ${(props) => props.theme.mainBgColor};
 `;
 
 const ListInner = styled(Inner)`
@@ -32,7 +32,7 @@ const ItemsContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
   margin-bottom: 32px;
 `;
 

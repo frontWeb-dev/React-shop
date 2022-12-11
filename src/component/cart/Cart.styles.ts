@@ -5,7 +5,7 @@ const Category = styled.p`
   margin-bottom: 50px;
   padding: 8px 0;
   font-size: 14px;
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
 
   span {
     opacity: 0.6;
@@ -13,7 +13,7 @@ const Category = styled.p`
 `;
 
 const EmptyText = styled.p`
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
   margin-bottom: 40px;
   font-size: 24px;
 `;
@@ -71,7 +71,7 @@ const ProductInfo = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 3rem;
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
 
   @media (max-width: 1025px) {
     padding: 1rem 0.25rem;
@@ -109,7 +109,7 @@ const TotalContainer = styled.div`
   flex-shrink: 0;
   align-items: center;
   align-self: flex-start;
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
   font-size: 1.5rem;
   margin: 2.5rem 0 5rem 0;
 

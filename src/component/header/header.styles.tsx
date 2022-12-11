@@ -6,9 +6,12 @@ const HeaderWrapper = styled.header`
   top: 0;
   width: 100%;
   height: 64px;
-  color: #fff;
-  background-color: #191a24;
-  z-index: 1;
+  font-weight: 600;
+  color: ${(props) => props.theme.subTextColor};
+  background-color: ${(props) => props.theme.mainBgColor};
+  z-index: 9999;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
 `;
 const HeaderInner = styled(Inner)`
   display: flex;
@@ -46,15 +49,15 @@ const Snb = styled.div`
   align-items: center;
 `;
 
-const ModeButton = styled.button<{ isDark: boolean }>`
+const ModeButton = styled.button<{ isDark: string }>`
   width: 28px;
   height: 28px;
   margin-right: 16px;
   color: #fff;
   background: ${(props) =>
-      props.isDark ? `url('/assets/asset 16.svg')` : `url('/assets/asset 17.svg')`}
+      props.isDark === 'dark' ? `url('/assets/asset 16.svg')` : `url('/assets/asset 17.svg')`}
     no-repeat center / cover;
-  filter: invert(100%) sepia(0%) saturate(7488%) hue-rotate(355deg) brightness(105%) contrast(105%);
+  filter: ${(props) => props.theme.svgFilter};
 `;
 
 const SearchForm = styled.form``;
@@ -64,14 +67,14 @@ const SearchInput = styled.input`
   padding: 0 16px;
   font-size: 14px;
   border-radius: 5px;
-  background-color: #4b5563;
+  background-color: ${(props) => props.theme.searchColor};
 `;
 const CartButton = styled.button`
   position: relative;
   width: 48px;
   height: 48px;
   margin-left: 4px;
-  color: #fff;
+  color: ${(props) => props.theme.subTextColor};
   &:hover {
     border-radius: 5px;
     background-color: rgba(166, 173, 186, 0.2);
@@ -88,7 +91,8 @@ const Bedge = styled.span`
   top: 0;
   right: 0;
   border-radius: 10px;
-  background-color: red;
+  color: #fff;
+  background-color: ${(props) => props.theme.accentColor};
 `;
 
 export {

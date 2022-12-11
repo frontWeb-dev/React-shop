@@ -5,8 +5,7 @@ const FooterWrapper = styled.div`
   width: 100%;
   height: 288px;
   padding: 40px 0;
-  color: #a6aaba;
-  background-color: #242933;
+  background-color: ${(props) => props.theme.subBgColor};
 `;
 
 const FooterInner = styled(Inner)`
@@ -16,7 +15,7 @@ const FooterInner = styled(Inner)`
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
 `;
 
 const CardsContanter = styled.div`
@@ -34,7 +33,7 @@ const IconsContainer = styled.div`
 const IconButton = styled.button<{ bgUrl: string }>`
   width: 24px;
   height: 24px;
-  filter: invert(90%) sepia(63%) saturate(5038%) hue-rotate(180deg) brightness(79%) contrast(81%);
+  filter: ${(props) => props.theme.svgFilter};
   background: ${(props) => `url('${props.bgUrl}')`};
 
   &:nth-child(2) {

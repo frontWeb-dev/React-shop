@@ -16,10 +16,12 @@ const Sllck = styled(Slider)`
     .slick-active {
       button::before {
         color: #fff;
+        opacity: 1;
       }
     }
     button::before {
       color: #a6adba;
+      opacity: 1;
     }
   }
 `;
@@ -52,8 +54,8 @@ const BannerText = styled.div`
     margin-top: 8px;
     padding: 12px 16px;
     font-weight: 600;
-    color: #a6aaba;
-    background-color: #191d24;
+    color: ${(props) => props.theme.buttonTextColor};
+    background-color: ${(props) => props.theme.buttonColor};
     border-radius: 5px;
   }
 `;

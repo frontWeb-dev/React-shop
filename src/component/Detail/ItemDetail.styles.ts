@@ -6,7 +6,7 @@ const DetailNav = styled.p`
   margin-bottom: 50px;
   padding: 8px 0;
   font-size: 14px;
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
 
   span {
     opacity: 0.6;
@@ -36,7 +36,7 @@ const DetailImage = styled.div`
 `;
 
 const ItemInfo = styled.div`
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
 
   @media (min-width: 1025px) {
     padding: 0 3rem;

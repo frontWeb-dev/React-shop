@@ -5,6 +5,7 @@ const ItemWrapper = styled.div`
   flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
+  border: ${(props) => props.theme.border};
 `;
 
 const ImageContainer = styled.div`
@@ -27,9 +28,9 @@ const InfoContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   padding: 1.5rem;
-  color: #a6aaba;
+  color: ${(props) => props.theme.mainTextColor};
   font-weight: 600;
-  background-color: #374151;
+  background-color: ${(props) => props.theme.subBgColor};
 
   p:last-child {
     font-weight: 400;
