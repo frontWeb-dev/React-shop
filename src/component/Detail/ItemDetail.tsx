@@ -19,6 +19,7 @@ import { rate } from '../../mock/rate';
 import { CartItemState } from '../../store/atoms';
 import { getProducts } from '../../store/apis';
 import { itemsProps } from '../../utils/type';
+import { menu } from './../../mock/menu';
 
 const ItemDetail = () => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const ItemDetail = () => {
   return (
     <DetailWrapper>
       <DetailNav>
-        {state.category}
+        {menu.filter((a) => state.category.match(a.apiCategory))[0].category}
         <span> &gt; </span>
         {state.title}
       </DetailNav>
