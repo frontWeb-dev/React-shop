@@ -11,6 +11,7 @@ declare module 'styled-components' {
     searchColor: string;
     accentColor: string;
     svgFilter: string;
-    buttonTextColor: string;
+    hoverBgColor: string;
+    headerBgColor: string;
   }
 }

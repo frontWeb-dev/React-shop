@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  width: 100vw;
+const Wrapper = styled.div<{ sideBar: boolean }>`
+  width: ${(props) => (props.sideBar ? '100vw' : 0)};
   height: 100vh;
   position: fixed;
   top: 0;
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   background-color: rgba(17, 19, 24, 0.5);
   overflow: hidden;
   z-index: 9999;
+  cursor: pointer;
 `;
 
 const ModalContainer = styled.div`
@@ -31,6 +32,37 @@ const ModalContainer = styled.div`
   }
 `;
 
+const SideBarContainer = styled.div<{ sideBar: boolean }>`
+  width: 20rem;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.mainBgColor};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: ${(props) => (props.sideBar ? `translateX(0)` : `translateX(-100%)`)};
+  z-index: 9999;
+  cursor: Default;
+
+  @media (max-width: 480px) {
+    width: 15rem;
+  }
+
+  li {
+    padding: 12px 16px;
+    border-radius: 5px;
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBgColor};
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -39,4 +71,4 @@ const ButtonContainer = styled.div`
   margin-top: 1.5rem;
 `;
 
-export { Wrapper, ModalContainer, ButtonContainer };
+export { Wrapper, ModalContainer, SideBarContainer, ButtonContainer };
