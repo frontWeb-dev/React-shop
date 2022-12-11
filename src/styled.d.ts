@@ -13,5 +13,6 @@ declare module 'styled-components' {
     svgFilter: string;
     hoverBgColor: string;
     headerBgColor: string;
+    buttonTextColor: string;
   }
 }
