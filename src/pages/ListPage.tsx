@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
 import ItemList from './../component/itemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { menu } from './../mock/menu';

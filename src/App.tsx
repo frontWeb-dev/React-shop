@@ -13,14 +13,15 @@ import DetailPage from './pages/DetailPage';
 import Footer from './component/footer/Footer';
 import CartPage from './pages/CartPage';
 import ThemeProvider from './context/ThemeProvider';
+import Loading from './component/common/Loading';
 
 const App = () => {
   return (
     <RecoilRoot>
-      <Suspense fallback={<div>Loading...</div>}>
-        <ThemeProvider>
-          <BrowserRouter>
-            <GlobalStyle />
+      <ThemeProvider>
+        <BrowserRouter>
+          <GlobalStyle />
+          <Suspense fallback={<Loading />}>
             <Header />
             <Routes>
               <Route path='/' element={<Main />} />
@@ -29,9 +30,9 @@ const App = () => {
               <Route path='/product/:id' element={<DetailPage />} />
             </Routes>
             <Footer />
-          </BrowserRouter>
-        </ThemeProvider>
-      </Suspense>
+          </Suspense>
+        </BrowserRouter>
+      </ThemeProvider>
     </RecoilRoot>
   );
 };
