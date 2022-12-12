@@ -29,8 +29,8 @@ const App = () => {
               <Route path='/cart' element={<CartPage />} />
               <Route path='/product/:id' element={<DetailPage />} />
             </Routes>
-            <Footer />
           </Suspense>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </RecoilRoot>
@@ -38,6 +38,3 @@ const App = () => {
 };
 
 export default App;
-function useColorScheme() {
-  throw new Error('Function not implemented.');
-}

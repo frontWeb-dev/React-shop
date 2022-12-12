@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { Inner, MoreViewButton } from '../../style';
 
 function SampleNextArrow(props: any) {
-  const { className, style, onClick } = props;
+  const { _, style, onClick } = props;
   return (
     <ArrowWrapper onClick={onClick} arrow='next'>
       <BiRightArrow style={{ ...style, display: 'block' }} />
@@ -22,7 +22,7 @@ function SampleNextArrow(props: any) {
 }
 
 function SamplePrevArrow(props: any) {
-  const { className, style, onClick } = props;
+  const { _, style, onClick } = props;
   return (
     <ArrowWrapper onClick={onClick} arrow='prev'>
       <BiLeftArrow size={24} style={{ ...style, display: 'block' }} onClick={onClick} />
