@@ -1,4 +1,4 @@
-d# react-shop
+# react-shop
 
 faskstore API를 이용한 반응형 쇼핑몰 제작
 
