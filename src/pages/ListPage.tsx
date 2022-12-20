@@ -1,8 +1,8 @@
 import React from 'react';
-import ItemList from './../component/itemList/ItemList';
+import ItemList from '../component/itemList/ItemList';
 import { useParams } from 'react-router-dom';
-import { menu } from './../mock/menu';
-import Layout from './../component/common/Layout';
+import { menu } from '../mock/menu';
+import Layout from '../component/common/Layout';
 
 const ListPage = () => {
   const { category } = useParams();

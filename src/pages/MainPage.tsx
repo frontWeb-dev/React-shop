@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../component/banner/Banner';
-import ItemList from './../component/itemList/ItemList';
+import ItemList from '../component/itemList/ItemList';
 import { menu } from '../mock/menu';
 
 const mainPage = () => {

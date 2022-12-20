@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemDetail from '../component/Detail/ItemDetail';
-import Layout from './../component/common/Layout';
+import Layout from '../component/common/Layout';
 
 const DetailPage = () => {
   return (

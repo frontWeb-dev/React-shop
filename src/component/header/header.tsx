@@ -114,7 +114,7 @@ const Header = ({}) => {
                       onLinkClick(a.id);
                     }}
                   >
-                    {a.title}
+                    <span>{a.title}</span>
                   </li>
                 ))}
             </SearchResult>

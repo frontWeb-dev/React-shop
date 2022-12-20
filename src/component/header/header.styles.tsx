@@ -114,20 +114,38 @@ const SearchInput = styled.input`
 `;
 
 const SearchResult = styled.ul<{ search: boolean }>`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  max-width: 16rem;
+  max-height: 16rem;
+  overflow-y: auto;
   background-color: ${(props) => props.theme.searchColor};
 
   li {
-    padding: 0.75rem;
+    max-height: 72px;
+    display: flex;
+    flex-wrap: wrap;
     font-weight: 400;
+    padding: 0.75rem 1rem;
     border-radius: 5px;
+
+    span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
     &:hover {
       background-color: ${(props) => props.theme.hoverBgColor};
     }
   }
 
   @media (max-width: 480px) {
-    width: 100%;
+    position: fixed;
+    display: flex;
+    left: 0;
     border-radius: 0;
+    max-width: 100%;
   }
 `;
 
