@@ -3,15 +3,17 @@ import ItemList from '../component/itemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { menu } from '../mock/menu';
 import Layout from '../component/common/Layout';
+import ErrorPage from './ErrorPage';
 
 const ListPage = () => {
   const { category } = useParams();
-  const map = menu.filter((a) => a.url === category)[0].category;
+  const map = menu.filter((a) => a.url === category)[0]?.category;
 
   return (
     <>
       <Layout>
-        <ItemList category={map} />
+        {map && <ItemList category={map} />}
+        <ErrorPage />
       </Layout>
     </>
   );

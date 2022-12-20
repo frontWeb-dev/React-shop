@@ -14,6 +14,7 @@ import Footer from './component/footer/Footer';
 import CartPage from './pages/CartPage';
 import ThemeProvider from './context/ThemeProvider';
 import Loading from './component/common/Loading';
+import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route path='/:category' element={<ListPage />} />
               <Route path='/cart' element={<CartPage />} />
               <Route path='/product/:id' element={<DetailPage />} />
+              <Route path='/*' element={<ErrorPage />} />
             </Routes>
           </Suspense>
           <Footer />
